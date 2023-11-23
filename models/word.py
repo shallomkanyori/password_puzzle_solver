@@ -1,7 +1,8 @@
 """Contains the Word class."""
 from models import Base
 
-from sqlalchemy import Column, String, Integer
+from sqlalchemy import Column, String, Integer, ForeignKey
+from sqlalchemy.orm import relationship
 
 
 class Word(Base):
@@ -11,8 +12,11 @@ class Word(Base):
     id = Column(Integer, primary_key=True)
     text = Column(String(60), nullable=False)
     difficulty = Column(Integer, nullable=False)
+    category_id = Column(Integer, ForeignKey('categories.id'), nullable=False)
 
-    def __init__(text, difficulty):
+    category = relationship('Category', backref='words')
+
+    def __init__(self, text, difficulty):
         """Initializes a category instance.
 
         Args:
