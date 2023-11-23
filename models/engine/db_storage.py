@@ -28,6 +28,20 @@ class DBStorage:
         if env == 'test':
             models.Base.metadata.drop_all(self.__engine)
 
+    def all(self, cls=None):
+        """Returns all records or all records of a given class.
+
+        Args:
+            cls: The class to retrieve records of. Optional.
+        """
+
+        if cls:
+            return self.__session.query(cls).all()
+        else:
+            res = self.__session.query(models.word.Word).all()
+            res.extend(self.__session.query(models.category.Category).all())
+            return res
+
     def new(self, obj):
         """Adds new object to current database session"""
 
