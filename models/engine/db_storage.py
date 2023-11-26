@@ -2,6 +2,7 @@
 """This module defines a class to manage database storage."""
 import models
 import os
+import random
 
 from sqlalchemy import create_engine
 from sqlalchemy.orm import scoped_session, sessionmaker
@@ -41,6 +42,22 @@ class DBStorage:
             res = self.__session.query(models.word.Word).all()
             res.extend(self.__session.query(models.category.Category).all())
             return res
+
+    def get_random_word(self, difficulty):
+        """Get a random word of a given difficulty."""
+
+        if difficulty not in range(1, 4):
+            return None
+
+        words = (self.__session.query(models.word.Word)
+                               .filter_by(difficulty=difficulty)
+                               .all())
+        word = random.choice(words)
+        res = {"word": word.text,
+               "difficulty": word.difficulty,
+               "category": word.category.name}
+
+        return res
 
     def new(self, obj):
         """Adds new object to current database session"""
