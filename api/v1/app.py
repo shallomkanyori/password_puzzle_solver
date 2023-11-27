@@ -2,6 +2,7 @@
 """Flask application for the Password Puzzle Solver API."""
 from flask import Flask, abort, jsonify
 from models import storage
+from os import environ
 
 app = Flask(__name__)
 app.config['JSONFIY_PRETTYPRINT_REGULAR'] = True
@@ -29,3 +30,9 @@ def get_word(difficulty):
         abort(404)
 
     return jsonify(word)
+
+
+if __name__ == "__main__":
+    host = environ.get('PWD_SOLVER_API_HOST', '0.0.0.0')
+    port = environ.get('PWD_SOLVER_API_PORT', '5000')
+    app.run(host=host, port=port, threaded=True)
