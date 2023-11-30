@@ -1,11 +1,14 @@
 #!/usr/bin/python3
 """Flask application for the Password Puzzle Solver API."""
 from flask import Flask, abort, jsonify
+from flask_cors import CORS
 from models import storage
 from os import environ
 
 app = Flask(__name__)
+app.url_map.strict_slashes = False
 app.config['JSONFIY_PRETTYPRINT_REGULAR'] = True
+cors = CORS(app, resources={r"/api/v1/*": {"origins": "*"}})
 
 
 @app.teardown_appcontext
@@ -28,6 +31,8 @@ def get_word(difficulty):
 
     if not word:
         abort(404)
+
+    word['word'] = word['word'].upper()
 
     return jsonify(word)
 
