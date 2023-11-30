@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Password Puzzle Solver</title>
+
+    <!-- FAVICON -->
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='images/favicon-32x32.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static', filename='images/favicon-16x16.png') }}">
+
+    <!-- ****************
+	 CSS styles
+	 ****************-->
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/common.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/start.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/game.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/modal.css') }}">
+
+    <!-- Font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Share+Tech+Mono">
+
+    <!-- ****************
+	 jQuery
+	 ****************-->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="{{ url_for('static', filename='scripts/main.js') }}"></script>
+</head>
+<body>
+	{% block content %}
+	{% endblock %}
+</body>

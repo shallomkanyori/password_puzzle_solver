@@ -1,0 +1,50 @@
+{% extends 'base.html'%}
+
+{% block content %}
+<header>
+	<span>Terminal 01</span>
+	<span>{{ word.category }}</span>
+	<div class='score-info'>
+		<span id='score'>Score: 0</span>
+		<span id='best'>Best: 0</h3>
+	</div>
+</header>
+<div class='main'>
+	<div class='screen'>
+		<p></p>
+	</div>
+	<div class='password'>
+		{% for letter in word.word %}<span>_</span>{% endfor %}
+	</div>
+	<div class='keys'>
+		<div class='key_row'>
+		{% for key in 'QWERTYUIOP'%}
+			<button class='key'>{{ key }}</button>
+		{% endfor %}
+		</div>
+		<div class='key_row'>
+		{% for key in 'ASDFGHJKL'%}
+			<button class='key'>{{ key }}</button>
+		{% endfor %}
+		</div>
+		<div class='key_row'>
+		{% for key in 'ZXCVBNM'%}
+			<button class='key'>{{ key }}</button>
+		{% endfor %}
+		</div>
+	</div>
+</div>
+<footer>
+	<a href="{{ url_for('start') }}">Home</a>
+</footer>
+<div class="modal">
+	<div class="modal-content">
+		<h1></h1>
+		<p></p>
+		<button></button>
+	</div>
+</div>
+<script>
+	const word = '{{ word.word }}';
+</script>
+{% endblock %}
