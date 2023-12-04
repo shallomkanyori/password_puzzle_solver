@@ -59,6 +59,21 @@ class DBStorage:
 
         return res
 
+    def get_category_by_name(self, category):
+        """Returns the category with the given name. None if not found.
+
+        Args:
+            category (str): the name of the category.
+        """
+        if type(category) is not str:
+            raise TypeError("Category name must be a string")
+
+        category = (self.__session.query(models.category.Category)
+                                  .filter_by(name=category)
+                                  .first())
+
+        return category
+
     def new(self, obj):
         """Adds new object to current database session"""
 
