@@ -107,6 +107,7 @@ function updateUiWrong () {
     $('.modal-content button').click(function () {
       playing = true;
       score = 0;
+      localStorage.pwdSolverScore = 0;
       window.location.reload();
     });
   }
