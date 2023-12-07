@@ -80,6 +80,10 @@ header {
 	color: #FF0404;
 }
 
+.screen p {
+	font-size: 30px;
+}
+
 footer {
 	width: 98%;
 	margin: 10px auto;
