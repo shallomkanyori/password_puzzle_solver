@@ -65,13 +65,21 @@ header a {
 }
 
 #features img {
-	width: 100px;
-	height: 100px;
+	width: 100%;
+	height: auto;
+	min-width: 300px;
+	max-width: 1366px;
+	margin: 0 auto;
 }
 
 .features-articles {
 	display: flex;
 	justify-content: space-evenly;
+}
+
+.features-articles article {
+	margin: 5px;
+	text-align: center;
 }
 
 .contact-info {
@@ -90,7 +98,7 @@ h1 {
 }
 
 h3 {
-	margin: 3px 0;
+	margin: 3px;
 }
 
 p {
