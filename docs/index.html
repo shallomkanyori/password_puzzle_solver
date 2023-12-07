@@ -2,17 +2,27 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
-		<meta name="viewport" content=device-width">
+		<meta name="viewport" content="width=device-width">
 
+		<!-- FAVICON -->
+		<link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='images/favicon-32x32.png') }}">
+		<link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static', filename='images/favicon-16x16.png') }}">
+
+		<!-- FontAwesome -->
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+		<!-- CSS -->
 		<link rel="stylesheet" type="text/css" href="main.css">
+
+		<!-- Font -->
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Share+Tech+Mono">
 	</head>
 	<body>
 		<header>
 			<a href="#features">Features</a>
 			<a href="#about">About</a>
 		</header>
-		<div>
+		<div class="main">
 			<section>
 				<h1>Password Puzzle Solver</h1>
 				<p>Can you crack the hidden password?</p>
@@ -20,21 +30,20 @@
 			</section>
 			<section>
 				<h1>Features</h1>
-				<article>
-					<img>
-					<h3>An immersive hacker-themed interface</h3>
-					<p></p>
-				</article>
-				<article>
-					<img>
-					<h3>Engaging and complex gameplay</h3>
-					<p></p>
-				</article>
-				<article>
-					<img>
-					<h3>Beat your best score</h3>
-					<p></p>
-				</article>
+				<div class="features">
+					<article>
+						<img>
+						<h3>An immersive hacker-themed interface</h3>
+					</article>
+					<article>
+						<img>
+						<h3>Engaging and complex gameplay</h3>
+					</article>
+					<article>
+						<img>
+						<h3>Beat your best score</h3>
+					</article>
+				</div>
 			</section>
 			<section>
 				<h1>About</h1>
