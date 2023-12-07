@@ -1,0 +1,21 @@
+body {
+        min-height: 100vh;
+
+        margin:0;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+
+        background: #000;
+        font-family: 'Share Tech Mono', serif;
+        font-style: normal;
+        font-weight: 400;
+        color: #10D023;
+}
+
+body *{
+        box-sizing: border-box;
+        margin: 0;
+}
