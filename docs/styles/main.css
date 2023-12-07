@@ -72,6 +72,11 @@ header a {
 	margin: 0 auto;
 }
 
+#features p {
+	text-align: start;
+	font-size: 15px;
+}
+
 .features-articles {
 	display: flex;
 	justify-content: space-evenly;
@@ -80,6 +85,9 @@ header a {
 .features-articles article {
 	margin: 5px;
 	text-align: center;
+
+	background-color: #0D210F;
+	padding: 0 5px;
 }
 
 .contact-info {
@@ -99,6 +107,8 @@ h1 {
 
 h3 {
 	margin: 3px;
+	border-bottom: 1px solid #10D023;
+	padding-bottom: 3px;
 }
 
 p {
