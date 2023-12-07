@@ -64,6 +64,11 @@ header a {
 	background-color: #10D023;
 }
 
+#features img {
+	width: 100px;
+	height: 100px;
+}
+
 .features-articles {
 	display: flex;
 	justify-content: space-evenly;
