@@ -39,7 +39,7 @@ header a {
 
 #intro, #features {
 	border-bottom: 3px solid #10D023;
-	padding-bottom: 5px;
+	padding-bottom: 15px;
 }
 
 #intro img {
@@ -80,7 +80,8 @@ header a {
 }
 
 h1 {
-	margin: 5px 0;
+	margin-top: 15px;
+	margin-bottom: 5px;
 }
 
 h3 {
