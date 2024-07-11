@@ -1,17 +1,20 @@
 """Main Flask app for Password Puzzle Solver."""
-from flask import Flask, render_template, request, abort
+from flask import Flask, render_template, request, abort, url_for
+from flask_cors import CORS
 from models import storage
-
+import utils
 import json
 import requests
 
 
 app = Flask(__name__)
 app.url_map.strict_slashes = False
+app.config['JSONIFY_PRETTYPRINT_REGULAR'] = True
+cors = CORS(app, resources={r"/api/v1/*": {"origins": "*"}})
 
 
 @app.teardown_appcontext
-def teardown_db(error):
+def close_db(error):
     """Close database session."""
     storage.close()
 
@@ -22,12 +25,9 @@ def start():
 
     if request.method == 'POST':
         difficulty = int(request.form["difficulty"])
-        url = "http://localhost:5001/api/v1/word/{}".format(difficulty)
+        word = utils.get_word(difficulty)
 
-        res = requests.get(url)
-
-        if res.status_code == 200:
-            word = res.json()
+        if word:
             return render_template("game.html", word=word)
         else:
             abort(500)
