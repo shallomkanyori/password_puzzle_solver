@@ -2,6 +2,7 @@
 from app import app
 from flask import abort, jsonify
 from models import storage
+import utils
 
 
 @app.route('/api/v1/word/<int:difficulty>')
