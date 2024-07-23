@@ -12,7 +12,7 @@ def get_word(difficulty):
     Args:
         difficulty(int): The difficulty of the random word to get.
     """
-    word = utils.get_word(difficulty)
+    word = utils.get_random_word(difficulty)
 
     if not word:
         abort(404)

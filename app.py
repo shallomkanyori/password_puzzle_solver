@@ -4,19 +4,19 @@ from flask_cors import CORS
 from models import storage
 import utils
 import json
-import requests
 
 
 app = Flask(__name__)
+app.logger.setLevel('INFO')
 app.url_map.strict_slashes = False
 app.config['JSONIFY_PRETTYPRINT_REGULAR'] = True
-cors = CORS(app, resources={r"/api/v1/*": {"origins": "*"}})
+# cors = CORS(app, resources={r"/api/v1/*": {"origins": "*"}})
 
 
-@app.teardown_appcontext
-def close_db(error):
-    """Close database session."""
-    storage.close()
+# @app.teardown_appcontext
+# def close_db(error):
+#     """Close database session."""
+#     storage.close()
 
 
 @app.route("/", methods=['GET', 'POST'])
@@ -25,8 +25,7 @@ def start():
 
     if request.method == 'POST':
         difficulty = int(request.form["difficulty"])
-        word = utils.get_word(difficulty)
-
+        word = utils.get_random_word(difficulty)
         if word:
             return render_template("game.html", word=word)
         else:

@@ -1,101 +1,101 @@
-Word,Difficulty,Category
-Paris,Easy,Places
-Symphony,Medium,Music
-Renaissance,Hard,History
-Espresso,Medium,Food
-Galaxy,Easy,Space
-Algorithm,Hard,Technology
-Democracy,Medium,Politics
-Avalanche,Hard,Nature
-Odyssey,Medium,Literature
-Juxtapose,Hard,Language
-Antarctica,Medium,Geography
-Cello,Easy,Music
-Inquisition,Hard,History
-Raspberry,Medium,Food
-Nebula,Medium,Space
-Innovation,Medium,Technology
-Picasso,Easy,Art
-Marathon,Medium,Sports
-Archipelago,Hard,Geography
-Meteorite,Medium,Science
-Zephyr,Easy,Nature
-Babylon,Medium,History
-Mojito,Easy,Food
-Paradox,Hard,Philosophy
-Symphony,Medium,Music
-Sistine,Hard,Art
-Nirvana,Easy,Music
-Machination,Hard,Conspiracy
-Penultimate,Hard,Language
-Espresso,Easy,Food
-Fibonacci,Medium,Mathematics
-Polynesia,Medium,Geography
-Zenith,Easy,Space
-Algorithm,Hard,Technology
-Gourmet,Medium,Food
-Salvador,Easy,Art
-Galapagos,Medium,Nature
-Democracy,Medium,Politics
-Odyssey,Hard,Literature
-Kilimanjaro,Hard,Geography
-Eclipse,Easy,Astronomy
-Gargantuan,Medium,Vocabulary
-Serendipity,Hard,Philosophy
-Renaissance,Hard,History
-Perspicacious,Hard,Vocabulary
-Haiku,Medium,Literature
-Ponder,Medium,Philosophy
-Namaste,Easy,Culture
-Mandala,Medium,Art
-Orator,Medium,Politics
-Tsunami,Hard,Nature
-Pavlova,Medium,Food
-Byzantine,Hard,History
-Fahrenheit,Medium,Science
-Ziggurat,Hard,Architecture
-Melancholy,Medium,Emotion
-Sahara,Medium,Geography
-Quasar,Hard,Astronomy
-Jamboree,Medium,Event
-Pantomime,Hard,Entertainment
-Ephemeral,Hard,Philosophy
-Quixotic,Medium,Literature
-Cacophony,Medium,Music
-Menagerie,Hard,Zoology
-Euphoria,Medium,Emotion
-Dystopia,Medium,Literature
-Bungalow,Easy,Architecture
-Anomaly,Medium,Science
-Capricious,Hard,Personality
-Iridescent,Hard,Color
-Symbiosis,Medium,Biology
-Juxtapose,Hard,Art
-Nirvana,Medium,Philosophy
-Cappuccino,Easy,Food
-Oblivion,Medium,Emotion
-Equilibrium,Medium,Physics
-Arboretum,Hard,Nature
-Sonnet,Easy,Literature
-Xenophobia,Hard,Sociology
-Pantheon,Medium,Architecture
-Doppelganger,Hard,Literature
-Nebulous,Medium,Science
-Labyrinth,Hard,Mythology
-Cynosure,Medium,Personality
-Osmosis,Medium,Biology
-Incognito,Medium,Personality
-Panorama,Easy,Photography
-Ponder,Medium,Philosophy
-Incandescent,Medium,Light
-Capitulate,Hard,Politics
-Esoteric,Medium,Philosophy
-Quizzical,Medium,Personality
-Antithesis,Hard,Literature
-Renaissance,Medium,Art
-Malachite,Hard,Minerals
-Nostalgia,Medium,Emotion
-Polyglot,Hard,Language
-Diaphanous,Hard,Texture
-Sublime,Medium,Philosophy
-Synchronicity,Hard,Philosophy
+word,difficulty,hint
+Paris,Novice,The capital city known for its tower
+Symphony,Intermediate,Harmony in orchestrated code
+Renaissance,Expert,A rebirth of ancient secrets
+Espresso,Intermediate,Code for a strong java injection
+Galaxy,Novice,A vast network of celestial nodes
+Algorithm,Expert,A sequence for decrypting complexity
+Democracy,Intermediate,A system where every node counts
+Avalanche,Expert,Data cascade down a mountain of nodes
+Odyssey,Intermediate,A journey through encrypted lore
+Juxtapose,Expert,Parallel lines of code for comparison
+Antarctica,Intermediate,A frozen continent at the southern pole
+Cello,Novice,A stringed instrument played with a bow
+Inquisition,Expert,A period of intense questioning and investigation
+Raspberry,Intermediate,A tart, red fruit often used in desserts
+Nebula,Intermediate,A cosmic cloud of gas and dust
+Innovation,Intermediate,Revolutionary change in digital evolution
+Picasso,Novice,A cubist painter of Spanish origin
+Marathon,Intermediate,A long-distance race named after a Greek battle site
+Archipelago,Expert,A cluster of islands in a vast ocean
+Meteorite,Intermediate,A fragment of celestial debris striking Earth's crust
+Zephyr,Novice,A gentle breeze in the natural world
+Babylon,Intermediate,An ancient city of wonders and walls
+Mojito,Novice,A minty cocktail from tropical shores
+Paradox,Expert,A mind-bending contradiction in thought
+Symphony,Intermediate,Harmony in orchestrated code
+Sistine,Expert,Heavenly frescoes on Vatican walls
+Nirvana,Novice,The ultimate state of musical bliss
+Machination,Expert,Intricate schemes in the shadows
+Penultimate,Expert,Second to last in the lexicon of code
+Espresso,Novice,A strong java injection into the system
+Fibonacci,Intermediate,Sequence in nature's numerical code
+Polynesia,Intermediate,A cluster of islands in a vast ocean
+Zenith,Novice,Peak point in celestial navigation
+Algorithm,Expert,Encoded steps for decrypting complexity
+Gourmet,Intermediate,Exquisite flavors in the culinary matrix
+Salvador,Novice,An artistic maestro of surreal realms
+Galapagos,Intermediate,Darwin's isles of evolutionary marvels
+Democracy,Intermediate,Nodes casting digital votes
+Odyssey,Expert,A digital journey through encoded myths
+Kilimanjaro,Expert,A towering peak in geographic arrays
+Eclipse,Novice,A celestial event where light is obscured
+Gargantuan,Intermediate,Monstrous in size, a titan among words
+Serendipity,Expert,Chance encounters with algorithmic grace
+Renaissance,Expert,A rebirth of ancient wisdom in the digital age
+Perspicacious,Expert,Keen insight into the labyrinth of code
+Haiku,Intermediate,Three lines in digital tranquility
+Ponder,Intermediate,To dwell in the wisdom of encrypted queries
+Namaste,Novice,A greeting encoded in cultural reverence
+Mandala,Intermediate,Sacred geometry in the digital tapestry
+Orator,Intermediate,Nodes delivering political discourse
+Tsunami,Expert,A monstrous wave in the digital ocean
+Pavlova,Intermediate,A delicate dessert that dances on the palate
+Byzantine,Expert,Intricate mazes of historical data
+Fahrenheit,Intermediate,Heat measured in encrypted degrees
+Ziggurat,Expert,An ancient step pyramid in the data architecture
+Melancholy,Intermediate,Encoded sadness in digital echoes
+Sahara,Intermediate,A vast desert of data under the digital sun
+Quasar,Expert,Cosmic beacons in the celestial matrix
+Jamboree,Intermediate,A festive gathering of encrypted nodes
+Pantomime,Expert,Digital theatre without spoken code
+Ephemeral,Expert,Fleeting moments in the digital ether
+Quixotic,Intermediate,A digital quest in a labyrinth of literature
+Cacophony,Intermediate,Dissonant symphonies in encrypted melodies
+Menagerie,Expert,An encrypted zoo of digital wonders
+Euphoria,Intermediate,Encoded bliss in digital emotions
+Dystopia,Intermediate,A digital realm of encrypted nightmares
+Bungalow,Novice,A cozy abode in the digital landscape
+Anomaly,Intermediate,Encoded deviations in the scientific matrix
+Capricious,Expert,Whimsical nodes in the encrypted personality
+Iridescent,Expert,Shimmering hues in the digital spectrum
+Symbiosis,Intermediate,Encoded harmony in biological bonds
+Juxtapose,Expert,Parallel lines of encrypted artistry
+Nirvana,Intermediate,Encoded bliss in philosophical realms
+Cappuccino,Novice,A frothy java injection in the digital matrix
+Oblivion,Intermediate,Encoded voids in digital emotions
+Equilibrium,Intermediate,Balanced forces in the encrypted physics
+Arboretum,Expert,A digital sanctuary of encrypted flora
+Sonnet,Novice,A poetic verse in the encrypted literary lexicon
+Xenophobia,Expert,Encoded fears of digital strangers
+Pantheon,Intermediate,Architectural marvels in the digital skyline
+Doppelganger,Expert,Encoded twins in the literary matrix
+Nebulous,Intermediate,Clouds of encrypted gas in scientific realms
+Labyrinth,Expert,A maze of encrypted myths and mysteries
+Cynosure,Intermediate,An encrypted star in the digital constellation
+Osmosis,Intermediate,Encoded diffusion in the biological matrix
+Incognito,Intermediate,Hidden nodes in the encrypted personality
+Panorama,Novice,A wide-angle view of the encrypted landscape
+Ponder,Intermediate,Encrypted reflections in philosophical echoes
+Incandescent,Intermediate,Shining lights in the digital spectrum
+Capitulate,Expert,To surrender in the digital political arena
+Esoteric,Intermediate,Encoded knowledge in the philosophical depths
+Quizzical,Intermediate,A puzzle of encrypted personality traits
+Antithesis,Expert,Opposing nodes in the encrypted literary world
+Renaissance,Intermediate,Encoded revival in the digital artistry
+Malachite,Expert,Encoded gemstone in the mineral matrix
+Nostalgia,Intermediate,Encoded longing in digital emotions
+Polyglot,Expert,Encoded mastery of multiple digital languages
+Diaphanous,Expert,Transparent nodes in the encrypted texture
+Sublime,Intermediate,Encoded beauty in philosophical transcendence
+Synchronicity,Expert,Encoded coincidences in digital philosophies

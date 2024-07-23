@@ -1,7 +1,9 @@
 """Helper functions."""
+from models import storage
+from random import choice
 
 
-def get_word(difficulty):
+def get_random_word(difficulty):
     """Returns a random word of the given difficulty.
 
     Args:
@@ -10,8 +12,15 @@ def get_word(difficulty):
     if difficulty not in range(1, 4):
         return None
 
-    word = storage.get_random_word(difficulty)
+    words = storage.find('words', {'difficulty': difficulty})
+    if not words:
+        return None
 
+    words = list(words)
+    if len(words) == 0:
+        return None
+
+    word = choice(words)
     if not word:
         return None
 
