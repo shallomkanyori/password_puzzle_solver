@@ -62,16 +62,38 @@
 		</div>
 
 		<div class="game-navigation">
-			<button class="nav-btn" id="back-to-landing">Back to Main Menu</button>
+			<button class="nav-btn" class="back-to-landing">Back to Main Menu</button>
 		</div>
 	</div>
 </div>
-<div class="modal">
-	<div class="modal-content">
-		<h1></h1>
-		<p></p>
-		<button></button>
-	</div>
+
+<!-- Success Modal -->
+<div id="success-modal" class="modal">
+    <div class="modal-content success">
+        <h2>SUCCESS!</h2>
+        <p>You guessed the word!</p>
+        <p id="best-score">New Best Score!</p>
+        <p>Points earned: <span id="points-earned">100</span></p>
+        <div class="modal-actions">
+            <button id="next-game" class="modal-btn">Next Game</button>
+            <button id="return-btn" class="modal-btn back-to-landing">Return to Main Menu</button>
+        </div>
+    </div>
 </div>
+
+<!-- Game Over Modal -->
+<div id="gameover-modal" class="modal">
+    <div class="modal-content gameover">
+        <h2>LOCKED OUT!</h2>
+        <p>Game Over</p>
+        <p>Total Score: <span id="total-score">250</span></p>
+        <div class="modal-actions">
+            <button id="play-again" class="modal-btn">Play Again</button>
+            <button id="return-btn" class="modal-btn back-to-landing">Return to Main Menu</button>
+        </div>
+    </div>
+</div>
+
+<!-- Data -->
 <div id="word-data" data-word="{{ word.word }}" data-hint="{{ word.hint }}" data-difficulty="{{ word.difficulty }}"></div>
 {% endblock %}

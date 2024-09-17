@@ -20,6 +20,10 @@ function setup () {
   $('#current-score').text(score);
   $('#best-score').text(best);
 
+  $('.back-to-landing').click(function () {
+    window.location.href = '/';
+  });
+
   $('.key').click(function () {
     if (playing) {
       checkLetter($(this).text());
@@ -78,12 +82,11 @@ function updateUiCorrect () {
     $('#current-score').text(score);
     $('#best-score').text(best);
 
-    $('.modal').css('display', 'block');
-    $('.modal-content h1').text('Access Granted!');
-    $('.modal-content p').text('Score: +' + remaining + '!');
+    $('#success-modal').css('display', 'flex');
 
-    $('.modal-content button').text('Next');
-    $('.modal-content button').click(function () {
+    $('#points-earned').text(remaining);
+
+    $('#next-game').click(function () {
       playing = true;
       window.location.reload();
     });
@@ -100,14 +103,11 @@ function updateUiWrong () {
   if (remaining === 0) {
     playing = false;
 
-    $('.modal-content').addClass('modal-game-over');
+    $('#gameover-modal').css('display', 'flex');
 
-    $('.modal').css('display', 'block');
-    $('.modal-content h1').text('Access Denied!');
-    $('.modal-content p').text('Saved: +' + score);
+    $('#total-score').text(score);
 
-    $('.modal-content button').text('Play Again');
-    $('.modal-content button').click(function () {
+    $('#play-again').click(function () {
       playing = true;
       score = 0;
       localStorage.pwdSolverScore = 0;
