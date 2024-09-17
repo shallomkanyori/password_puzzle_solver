@@ -9,7 +9,7 @@
     padding: 20px;
     background-color: #000;
     color: #10D023;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Share Tech Mono', monospace;
 }
 
 /* Terminal Screen */
@@ -127,7 +127,7 @@
     border: 2px solid #10D023;
     cursor: pointer;
     transition: all 0.3s ease;
-	font-family: 'Courier New', Courier, monospace;
+	font-family: 'Share Tech Mono', monospace;
 	font-size: 1.7rem;
 }
 
