@@ -14,8 +14,8 @@ function setup () {
     score = Number(localStorage.pwdSolverScore);
   }
 
-  $('#score').text('Score: ' + score);
-  $('#best').text('Best: ' + best);
+  $('#current-score').text(score);
+  $('#best-score').text(best);
 
   $('.key').click(function () {
     if (playing) {
@@ -61,7 +61,7 @@ function updateUiCorrect () {
     }
   }
 
-  $('.password').html(wordProgressHtml.join(''));
+  $('.password-output').html(wordProgressHtml.join(''));
 
   if (wordProgress.join('') === word) {
     playing = false;
@@ -72,8 +72,8 @@ function updateUiCorrect () {
       best = score;
       localStorage.pwdSolverBest = best;
     }
-    $('#score').text('Score: ' + score);
-    $('#best').text('Best: ' + best);
+    $('#current-score').text(score);
+    $('#best-score').text(best);
 
     $('.modal').css('display', 'block');
     $('.modal-content h1').text('Access Granted!');

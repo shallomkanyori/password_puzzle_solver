@@ -1,42 +1,71 @@
 {% extends 'base.html'%}
 
 {% block content %}
-<header>
-	<span>Terminal 01</span>
-	<span>Category</span>
-	<div class='score-info'>
-		<span id='score'>Score: 0</span>
-		<span id='best'>Best: 0</span>
+<div class="game-container">
+	<!-- Terminal Screen -->
+	<div class="terminal-screen">
+		<p class="terminal-output">Guess the password:</p>
+		<p class="password-output">{% for letter in word.word %}<span>_</span>{% endfor %}</p>
 	</div>
-</header>
-<div class='main'>
-	<div class='screen'>
-		<p></p>
-	</div>
-	<div class='password'>
-		{% for letter in word.word %}<span>_</span>{% endfor %}
-	</div>
-	<div class='keys'>
-		<div class='key_row'>
+
+	<!-- On-screen Keyboard -->
+	<div class="keyboard">
+		<div class='key-row'>
+			{% for key in '`1234567890-='%}
+				<button class='disabled-key'>{{ key }}</button>
+			{% endfor %}
+			<button class='disabled-key exp-key'>BACK</button>
+		</div>
+		<div class='key-row'>
+			<button class='disabled-key exp-key'>TAB</button>
 		{% for key in 'QWERTYUIOP'%}
 			<button class='key'>{{ key }}</button>
 		{% endfor %}
+			<button class='disabled-key'>[</button>
+			<button class='disabled-key'>]</button>
+			<button class='disabled-key'>\</button>
 		</div>
-		<div class='key_row'>
+		<div class='key-row'>
+			<button class='disabled-key exp-key'>CAPS</button>
 		{% for key in 'ASDFGHJKL'%}
 			<button class='key'>{{ key }}</button>
 		{% endfor %}
+			<button class='disabled-key'>;</button>
+			<button class='disabled-key'>'</button>
+			<button class='disabled-key exp-key'>ENTER</button>
 		</div>
-		<div class='key_row'>
+		<div class='key-row'>
+			<button class='disabled-key exp-key'>SHIFT</button>
 		{% for key in 'ZXCVBNM'%}
 			<button class='key'>{{ key }}</button>
 		{% endfor %}
+			<button class='disabled-key'>,</button>
+			<button class='disabled-key'>.</button>
+			<button class='disabled-key'>/</button>
+			<button class='disabled-key exp-key'>SHIFT</button>
+		</div>
+		<div class='key-row'>
+			<button class='disabled-key exp-key'>CTRL</button>
+			<button class='disabled-key exp-key'>FN</button>
+			<button class='disabled-key exp-key'>ALT</button>
+			<button class='disabled-key exp-key space'>SPACE</button>
+			<button class='disabled-key exp-key'>ALT</button>
+			<button class='disabled-key exp-key'>CTRL</button>
+		</div>
+	</div>
+
+	<!-- Score and Navigation -->
+	<div class="game-info">
+		<div class="score-section">
+			<p>Current Score: <span id="current-score">0</span></p>
+			<p>Best Score: <span id="best-score">100</span></p>
+		</div>
+
+		<div class="game-navigation">
+			<button class="nav-btn" id="back-to-landing">Back to Main Menu</button>
 		</div>
 	</div>
 </div>
-<footer>
-	<a href="/password-puzzle">Home</a>
-</footer>
 <div class="modal">
 	<div class="modal-content">
 		<h1></h1>

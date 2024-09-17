@@ -1,16 +1,18 @@
 {% extends 'base.html' %}
 
 {% block content%}
+<div class="container">
 <h1>Password Puzzle Solver</h1>
-<form method='POST'>
-	<div class='select_difficulty'>
-		<input type='radio' id='easy' name='difficulty' value='1' checked='checked'>
-		<label for='easy'>Easy</label>
-		<input type='radio' id='medium' name='difficulty' value='2'>
-		<label for='medium'>Medium</label>
-		<input type='radio' id='hard' name='difficulty' value='3'>
-		<label for='hard'>Hard</label>
-	</div>
-	<button class='play_btn'>Play</button>
-</form>
+	<form method='POST'>
+		<div class='difficulty-section'>
+			<input type='radio' id='easy' name='difficulty' value='1' checked>
+			<label for='easy' class="difficulty-btn">Easy</label>
+			<input type='radio' id='medium' name='difficulty' value='2'>
+			<label for='medium' class="difficulty-btn">Medium</label>
+			<input type='radio' id='hard' name='difficulty' value='3'>
+			<label for='hard' class="difficulty-btn">Hard</label>
+		</div>
+		<button class='play-btn' type='submit'>Play</button>
+	</form>
+</div>
 {% endblock %}

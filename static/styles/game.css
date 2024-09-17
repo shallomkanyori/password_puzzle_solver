@@ -1,97 +1,138 @@
-header {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-
-	width: 98%;
-	margin: 10px auto;
-
-	font-size: 25px;
+/* Game Container */
+.game-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+	width: 95%;
+    height: 100vh;
+    padding: 20px;
+    background-color: #000;
+    color: #10D023;
+    font-family: 'Courier New', Courier, monospace;
 }
 
-.main {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	flex-grow: 2;
-
-	width: 80%;
+/* Terminal Screen */
+.terminal-screen {
+    width: 100%;
+    max-width: 1000px;
+    height: 45%;
+    background-color: #111;
+    border: 2px solid #10D023;
+    padding: 20px;
+    margin-bottom: 20px;
+    overflow-y: auto;
+    box-shadow: 0 0 20px #10D023;
 }
 
-.keys {
+.terminal-output {
+    font-size: 2rem;
+    white-space: pre-wrap;
+}
+
+.password-output {
+    font-size: 2.5rem;
+    margin-top: 5px;
+    letter-spacing: 10px;
+}
+
+/* On-screen Keyboard */
+.keyboard {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	gap: 10px;
+    width: 100%;
+    max-width: 1000px;
+}
+
+.key-row {
+	display: flex;
+	gap: 10px;
+}
+
+.key, .disabled-key {
+	font-size: 1.25rem;
+    padding: 1rem;
+	width: 40px;
+	height: 40px;
 }
 
 .key {
-	border-radius: 10px;
-	background-color: #000000;
-	border: 3px solid #10D023;
+    background-color: #111;
+    color: #10D023;
+    border: 2px solid #10D023;
+    cursor: pointer;
+    transition: all 0.3s ease;
+	
+}
 
-	color: #10D023;
-	font-size: 25px;
-	text-align: center;
+.disabled-key {
+	background-color: #111;
+	color: #1a5c20;
+	border: 1px solid #1a5c20;
+	cursor: default;
+}
 
-	width: 40px;
-	height: 40px;
-	margin: 10px 5px;
-	padding: 3px;
+.exp-key {
+	width: fit-content;
+	flex-grow: 1;
+}
+
+.disabled-key.space {
+	padding-left: 5rem;
+	padding-right: 5rem;
+}
+
+.key:hover:not([disabled]) {
+    background-color: #10D023;
+    color: #000;
 }
 
 .key:disabled {
-	border: 3px solid #06510d;
+	border: 2px solid #06510d;
 	color: #06510d;
 }
 
 .key:disabled.wrong {
-	border: 3px solid #650000;
+	border: 2px solid #650000;
 	color: #650000;
 }
 
-.password {
-	width: 100%;
-	margin: 15px 5px;
-
-	display: flex;
-	justify-content: center;
-	align-items: center;
+/* Score and Navigation Section */
+.game-info {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1000px;
+    margin-top: 20px;
+	font-size: 2rem;
 }
 
-.password span {
-	padding: 5px;
-	font-size: 25px;
+.score-section {
+	text-align: left;
 }
 
-.screen {
-	width: 40%;
-
-	flex-grow: 1;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: contain;
-
-	color: #FF0404;
+.game-navigation {
+    display: flex;
+    gap: 10px;
 }
 
-.screen p {
-	font-size: 30px;
+.nav-btn {
+    background-color: #000;
+    color: #10D023;
+    font-size: 1.25rem;
+    padding: 10px 20px;
+    border: 2px solid #10D023;
+    cursor: pointer;
+    transition: all 0.3s ease;
+	font-family: 'Courier New', Courier, monospace;
+	font-size: 1.7rem;
 }
 
-footer {
-	width: 98%;
-	margin: 10px auto;
-
-	font-size: 25px;
-}
-
-footer a {
-	color: #10D023;
-	text-decoration: none;
+.nav-btn:hover {
+    background-color: #10D023;
+    color: #111;
+    border: none;
 }
