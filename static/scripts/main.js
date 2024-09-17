@@ -1,12 +1,15 @@
 $(document).ready(setup);
 
 const alreadyProcessed = new Set();
+let word = "";
 let remaining = 7;
 let score = 0;
 let best = 0;
 let playing = true;
 
 function setup () {
+  word = $('#word-data').data('word');
+
   if (localStorage.pwdSolverBest) {
     best = Number(localStorage.pwdSolverBest);
   }

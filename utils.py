@@ -24,6 +24,7 @@ def get_random_word(difficulty):
     if not word:
         return None
 
+    del word['_id']
     word['word'] = word['word'].upper()
 
     return word
