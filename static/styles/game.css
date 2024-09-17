@@ -132,9 +132,7 @@
 }
 
 .nav-btn:hover {
-    background-color: #10D023;
-    color: #111;
-    border: none;
+    box-shadow: 0 0 10px #10D023;
 }
 
 #word-data {
