@@ -4,8 +4,11 @@
 <div class="game-container">
 	<!-- Terminal Screen -->
 	<div class="terminal-screen">
-		<p class="terminal-output">Guess the password:</p>
-		<p class="password-output">{% for letter in word.word %}<span>_</span>{% endfor %}</p>
+		<div class="terminal-header">
+			<p class="terminal-output">Guess the password:</p>
+			<p class="password-output">{% for letter in word.word %}<span>_</span>{% endfor %}</p>
+		</div>
+		<div id="feedback" class="terminal-output"></div>
 	</div>
 
 	<!-- On-screen Keyboard -->
@@ -62,7 +65,7 @@
 		</div>
 
 		<div class="game-navigation">
-			<button class="nav-btn" class="back-to-landing">Back to Main Menu</button>
+			<button class="nav-btn back-to-landing">Back to Main Menu</button>
 		</div>
 	</div>
 </div>

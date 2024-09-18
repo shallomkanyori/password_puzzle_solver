@@ -6,9 +6,24 @@ let remaining = 7;
 let score = 0;
 let best = 0;
 let playing = true;
+let typeItInst = null;
 
 function setup () {
   word = $('#word-data').data('word');
+
+  if ($('#feedback').length){
+    typeItInst = new TypeIt('#feedback', {
+      strings: ['Decryption sequence initiated', 'Awaiting input...'],
+      speed: 10,
+      cursorChar: "■",
+      afterStep: function (instance) {
+        $('#feedback').scrollTop($('#feedback').prop('scrollHeight'));
+      },
+      waitUntilVisible: true
+    });
+
+    typeItInst.break().go();
+  }
 
   if (localStorage.pwdSolverBest) {
     best = Number(localStorage.pwdSolverBest);
@@ -45,18 +60,22 @@ function checkLetter (letter) {
   alreadyProcessed.add(letter);
 
   if (word.includes(letter)) {
-    updateUiCorrect();
+    updateUiCorrect(letter);
   } else {
-    updateUiWrong();
+    updateUiWrong(letter);
     $('.key:contains(' + letter + ')').addClass('wrong');
   }
 
   $('.key:contains(' + letter + ')').prop('disabled', true);
 }
 
-function updateUiCorrect () {
+function updateUiCorrect (letter) {
   const wordProgress = [];
   const wordProgressHtml = [];
+  const feedback = [['Decryption sequence progressing..', `Letter ${letter} confirmed in password`],
+                    [`Correct match: ${letter}`, 'Decrypting further...'],
+                    ['Security vulnerability exploited', `${letter} validated`]];
+  const finalFeedback = ['Access Granted', 'Decryption Complete', 'Welcome, User X']
 
   for (let i = 0; i < word.length; i++) {
     if (alreadyProcessed.has(word[i])) {
@@ -70,6 +89,9 @@ function updateUiCorrect () {
 
   $('.password-output').html(wordProgressHtml.join(''));
 
+  /* Change cursor color  */
+  $(':root')[0].style.setProperty('--ti-cursor-color', '#10D023');
+
   if (wordProgress.join('') === word) {
     playing = false;
 
@@ -82,36 +104,71 @@ function updateUiCorrect () {
     $('#current-score').text(score);
     $('#best-score').text(best);
 
-    $('#success-modal').css('display', 'flex');
+    /* Ensure typing is completed synchronously before displaying modal  */
+    typeIt(feedback[Math.floor(Math.random() * feedback.length)], "", "", function () {
+      typeIt(finalFeedback, "", "", function (){
+        $('#success-modal').css('display', 'flex');
 
-    $('#points-earned').text(remaining);
+        $('#points-earned').text(remaining);
 
-    $('#next-game').click(function () {
-      playing = true;
-      window.location.reload();
+        $('#next-game').click(function () {
+          playing = true;
+          window.location.reload();
+        });
+      });
     });
+  } else {
+    typeIt(feedback[Math.floor(Math.random() * feedback.length)]);
   }
 }
 
-function updateUiWrong () {
+function updateUiWrong (letter) {
   remaining--;
-  const imgUrl = '/static/images/wrong' + (7 - remaining) + '.svg';
+  const feedback = [['Decryption failed', `No match for character ${letter}`, `Remaining attempts: ${remaining}`],
+                    [`Decryption error: ${letter} not part of the correct sequence`, `Remaining attempts: ${remaining}`],
+                    [`System alert: Failed character input ${letter} not valid`, `Remaining attempts: ${remaining}`]];
+  const finalFeedback = ['Unauthorized access detected...', 'System Lockdown Initiated..', 'Shutting down connection...'];
 
-  $('.screen p').text(remaining);
-  $('.screen').css('background-image', 'url("' + imgUrl + '")');
+  /* Change cursor color  */
+  $(':root')[0].style.setProperty('--ti-cursor-color', '#FF3333');
 
   if (remaining === 0) {
     playing = false;
 
-    $('#gameover-modal').css('display', 'flex');
+    /* Ensure typing is completed synchronously before displaying modal  */
+    typeIt(feedback[Math.floor(Math.random() * feedback.length)], "<span class='error-log'>", "</span>", function () {
+      typeIt(finalFeedback, "<span class='error-log'>", "</span>", function () {
+        $('#gameover-modal').css('display', 'flex');
 
-    $('#total-score').text(score);
+        $('#total-score').text(score);
 
-    $('#play-again').click(function () {
-      playing = true;
-      score = 0;
-      localStorage.pwdSolverScore = 0;
-      window.location.reload();
+        $('#play-again').click(function () {
+          playing = true;
+          score = 0;
+          localStorage.pwdSolverScore = 0;
+          window.location.reload();
+        });
+      });
     });
+  } else {
+    typeIt(feedback[Math.floor(Math.random() * feedback.length)], "<span class='error-log'>", "</span>");
   }
+}
+
+function typeIt(feedbackList, start="", end="", callback=null) {
+  typeItInst.break().flush();
+
+  for (let s of feedbackList) {
+    if (start){
+      s = start + s;
+    }
+
+    if (end){
+      s = s + end;
+    }
+
+    typeItInst.type(s).break();
+  }
+
+  typeItInst.flush(callback);
 }

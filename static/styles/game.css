@@ -17,12 +17,18 @@
     width: 100%;
     max-width: 1000px;
     height: 45%;
+    display: flex;
+    flex-direction: column;
     background-color: #111;
     border: 2px solid #10D023;
     padding: 20px;
     margin-bottom: 20px;
-    overflow-y: auto;
     box-shadow: 0 0 20px #10D023;
+    position: relative;
+}
+
+.terminal-header {
+    background-color: #111;
 }
 
 .terminal-output {
@@ -34,6 +40,36 @@
     font-size: 2.5rem;
     margin-top: 5px;
     letter-spacing: 10px;
+}
+
+#feedback {
+    font-size: 1.3rem;
+    width: 100%;
+    text-align: left;
+    margin-top: 5px;
+    padding-left: 5px;
+    flex-grow: 1;
+
+    /* Glow text */
+    text-shadow:0 0 10px #10D023;
+
+    /* Hide scrollbar */
+    overflow-y: scroll;
+    scrollbar-width: none;  /* Firefox */
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+}
+
+/* WebKit */
+#feedback::-webkit-scrollbar { 
+    width: 0;
+    height: 0;
+}
+
+.error-log {
+    color: #FF3333;
+
+    /* Glow text */
+    text-shadow: 0 0 10px #FF3333;
 }
 
 /* On-screen Keyboard */
