@@ -1,6 +1,6 @@
 # Password Puzzle Solver
 ![Pasword Puzzle Solver start screen](https://github.com/shallomkanyori/password_puzzle_solver/blob/master/docs/images/feature1.png?raw=true)
-Welcome to Password Puzzle Solver, a web-based game that challenges players to decrypt hidden passwords in a terminal-like interface. You can access the game here: [http://web-01.thayu.tech/password-puzzle](http://web-01.thayu.tech/password-puzzle).
+Welcome to Password Puzzle Solver, a web-based game that challenges players to decrypt hidden passwords in a terminal-like interface. You can access the game here: [https://password-puzzle-solver.vercel.app/](https://password-puzzle-solver.vercel.app/).
 
 This is my foundations portfolio project for the ALX software engineering program. Learn more about how I built this project [here](https://medium.com/@shallomkanyori/password-puzzle-solver-my-portfolio-project-journey-29ac9e744c45). You can also check out my [LinkedIn](https://www.linkedin.com/in/shallom-kanyori-613148254/).
 
