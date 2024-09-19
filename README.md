@@ -25,11 +25,22 @@ Password Puzzle Solver is an engaging and educational game where players attempt
 Before you begin, ensure you have the following prerequisites installed:
 
 - Python (version 3.8+)
-- MySQL (version 8.0+)
+- MongoDB (version 4.3+)
 
-### Installation (wip)
+### Installation
 
-[...Instructions coming soon...]
+To install and run this app, follow these steps:
+
+1. Clone the repository to your local machine.
+2. Open a terminal and navigate to the project directory.
+3. Ensure you have `mongod` running.
+4. Install the required dependencies by running the command `pip install -r requirements.txt`.
+5. If this is your first time, run `python populate_dp.py` to have some words to work with.
+6. You can set the `MONGO_URI` environment variable (default is `mongodb://localhost:27017`).
+7. You can run the app using the command `python app.py`.
+8. Open your web browser and navigate to [http://localhost:5000](http://localhost:5000) to access the game.
+
+Enjoy playing Password Puzzle Solver!
 
 ## How to Play
 
