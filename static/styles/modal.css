@@ -59,6 +59,10 @@
     animation: success-animation 1.5s infinite alternate;
 }
 
+#new-best {
+	visibility: hidden;
+}
+
 @keyframes success-animation {
     0% { box-shadow: 0 0 10px #10D023; }
     100% { box-shadow: 0 0 30px #10D023; }

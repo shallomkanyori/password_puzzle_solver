@@ -7,6 +7,7 @@ let score = 0;
 let best = 0;
 let playing = true;
 let typeItInst = null;
+let achievedBest = false;
 
 function setup () {
   word = $('#word-data').data('word');
@@ -100,6 +101,7 @@ function updateUiCorrect (letter) {
     if (score > best) {
       best = score;
       localStorage.pwdSolverBest = best;
+      achievedBest = true;
     }
     $('#current-score').text(score);
     $('#best-score').text(best);
@@ -108,6 +110,10 @@ function updateUiCorrect (letter) {
     typeIt(feedback[Math.floor(Math.random() * feedback.length)], "", "", function () {
       typeIt(finalFeedback, "", "", function (){
         $('#success-modal').css('display', 'flex');
+
+        if (achievedBest) {
+          $('#new-best').css('visibility', 'visible');
+        }
 
         $('#points-earned').text(remaining);
 
