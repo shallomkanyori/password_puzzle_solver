@@ -12,7 +12,7 @@ class DBStorage():
     def __init__(self, db):
         """Connect to MongoDB"""
 
-        self.uri = os.getenv('MONGO_URI', 'mongodb://localhost:27017')
+        self.uri = os.getenv('MONGODB_URI', 'mongodb://localhost:27017')
         self.client = MongoClient(self.uri)
 
         self.db = self.client[db]

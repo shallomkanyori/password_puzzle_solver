@@ -36,7 +36,7 @@ To install and run this app, follow these steps:
 3. Ensure you have `mongod` running.
 4. Install the required dependencies by running the command `pip install -r requirements.txt`.
 5. If this is your first time, run `python populate_dp.py` to have some words to work with.
-6. You can set the `MONGO_URI` environment variable (default is `mongodb://localhost:27017`).
+6. You can set the `MONGODB_URI` environment variable (default is `mongodb://localhost:27017`).
 7. You can run the app using the command `python app.py`.
 8. Open your web browser and navigate to [http://localhost:5000](http://localhost:5000) to access the game.
 
