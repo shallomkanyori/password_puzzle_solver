@@ -50,6 +50,17 @@
     box-shadow: 0 0 10px #10D023;
 }
 
+.modal-btn:disabled {
+    background-color: #06510d;
+    border: 2px solid #10D023;
+    color: #10D023;
+    cursor: default;
+}
+
+.modal-btn:disabled:hover {
+    box-shadow: none;
+}
+
 /* Success modal specific animation */
 .success h2, .success p {
     color: #10D023;
@@ -83,19 +94,41 @@
     100% { box-shadow: 0 0 30px #FF3333; }
 }
 
-/* Flicker Effect for both modals */
+/* Flicker Effect for modals */
 @keyframes flicker {
     0% { opacity: 1; }
     50% { opacity: 0.8; }
     100% { opacity: 1; }
 }
 
-#return-btn {
+#return-btn, #cancel-hint {
 	color:#10D023;
 	background-color: #111;
 	border: 2px solid #10D023;
 }
 
-#return-btn:hover {
+#return-btn:hover, #cancel-hint:hover {
 	box-shadow: 0 0 10px #10D023;
+}
+
+/* Hint Modal */
+.hint h2, .hint p {
+    color: #FFFF33;
+}
+
+.hint {
+    animation: hint-animation 1.5s infinite alternate;
+    border: 2px solid #FFFF33;
+}
+
+@keyframes hint-animation {
+    0% { box-shadow: 0 0 10px #FFFF33; }
+    100% { box-shadow: 0 0 30px #FFFF33; }
+}
+
+.hint-log {
+    color: #FFFF33;
+
+    /* Glow text */
+    text-shadow: 0 0 10px #FFFF33;
 }

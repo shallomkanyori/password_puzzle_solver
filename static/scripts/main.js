@@ -2,19 +2,27 @@ $(document).ready(setup);
 
 const alreadyProcessed = new Set();
 let word = "";
+let hint = "";
+let difficulty = "1";
+
 let remaining = 7;
 let score = 0;
 let best = 0;
+let cost = 0;
+
 let playing = true;
 let typeItInst = null;
 let achievedBest = false;
+let hintUsed = false;
 
 function setup () {
   word = $('#word-data').data('word');
+  hint = $('#word-data').data('hint');
+  difficulty = $('#word-data').data('difficulty');
 
   if ($('#feedback').length){
     typeItInst = new TypeIt('#feedback', {
-      strings: ['Decryption sequence initiated', 'Awaiting input...'],
+      strings: ['Decryption sequence initiated', `Attempts available: ${remaining}`, 'Awaiting input...'],
       speed: 10,
       cursorChar: "■",
       afterStep: function (instance) {
@@ -36,11 +44,26 @@ function setup () {
   $('#current-score').text(score);
   $('#best-score').text(best);
 
-  $('.back-to-landing').click(function () {
+  $('.back-to-landing').on('click', function () {
     window.location.href = '/';
   });
 
-  $('.key').click(function () {
+  $('#hint-btn').on('click', function () {
+    cost = parseInt(difficulty) + 2;
+    displayHintModal();
+  });
+
+  
+  $('#reveal-hint').on('click', function () {
+    revealHint();
+  });
+  
+
+  $('#cancel-hint').on('click', function () {
+    $('#hint-modal').css('display', 'none');
+  });
+
+  $('.key').on('click', function () {
     if (playing) {
       checkLetter($(this).text());
     }
@@ -51,6 +74,47 @@ function setup () {
       checkLetter(String.fromCharCode(event.which));
     }
   });
+}
+
+function revealHint() {
+  $('#hint-modal').css('display', 'none');
+
+  /* Change cursor color  */
+  $(':root')[0].style.setProperty('--ti-cursor-color', '#FFFF33');
+
+  if (score >= cost && !hintUsed) {
+    score -= cost;
+
+    $('#current-score').text(score);
+
+    typeIt(["Analyzing data...", `Keyword pattern suggests: ${hint}`], "<span class='hint-log'>", "</span>");
+
+  } else {
+    typeIt(["Retrieving analyzed data...", `>>> ${hint} <<<`], "<span class='hint-log'>", "</span>");
+  }
+
+  hintUsed = true;
+}
+
+function displayHintModal() { 
+  $('#hint-cost').text(cost);
+  $('#hint-current-score').text(score);
+
+  if (hintUsed) {
+    $('#hint-title').text('Hint already revealed');
+    $('#hint-text').css('display', 'none');
+    $('#hint-question').text('Would you like to display the hint again?');
+
+    $('#reveal-hint').text('Display hint');
+    $('#cancel-hint').text('Close');
+
+  } else if (score < cost) {
+    $('#reveal-hint').prop('disabled', true);
+    $('#reveal-hint').text('Insufficient points');
+    $('#cancel-hint').text('Close');
+  }
+
+  $('#hint-modal').css('display', 'flex');
 }
 
 function checkLetter (letter) {
@@ -117,7 +181,7 @@ function updateUiCorrect (letter) {
 
         $('#points-earned').text(remaining);
 
-        $('#next-game').click(function () {
+        $('#next-game').on('click', function () {
           playing = true;
           window.location.reload();
         });
@@ -148,7 +212,7 @@ function updateUiWrong (letter) {
 
         $('#total-score').text(score);
 
-        $('#play-again').click(function () {
+        $('#play-again').on('click', function () {
           playing = true;
           score = 0;
           localStorage.pwdSolverScore = 0;
